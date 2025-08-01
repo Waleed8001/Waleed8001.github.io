@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Use a modern, easy-to-read font family from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for clean, simple visuals -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles to override or add to Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for the back-to-top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: none; /* Initially hidden */
+            transition: all 0.3s ease;
+            z-index: 50;
+        }
+        #back-to-top:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200">
+
+    <!-- 
+        ========================
+        NAVIGATION BAR & HEADER
+        ========================
+    -->
+    <header class="fixed top-0 left-0 w-full bg-slate-900 bg-opacity-80 backdrop-blur-md z-40">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-500">Portfolio</a>
+            <ul class="hidden md:flex space-x-6 font-semibold">
+                <li><a href="#about" class="hover:text-blue-500 transition-colors">About</a></li>
+                <li><a href="#projects" class="hover:text-blue-500 transition-colors">Projects</a></li>
+                <li><a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-slate-200 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 p-4 rounded-b-lg">
+            <ul class="flex flex-col space-y-4 text-center font-semibold">
+                <li><a href="#about" class="block hover:text-blue-500 transition-colors">About</a></li>
+                <li><a href="#projects" class="block hover:text-blue-500 transition-colors">Projects</a></li>
+                <li><a href="#contact" class="block hover:text-blue-500 transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 
+        ========================
+        HERO SECTION
+        ========================
+    -->
+    <main>
+        <section id="hero" class="min-h-screen flex items-center justify-center p-8 text-center pt-24">
+            <div class="max-w-4xl">
+                <img src="myimage.jpeg" alt="Profile Picture" class="h-32 w-32 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-lg animate-pulse">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Assalam-U-Alaikum, I'm <span class="text-blue-400">Muhammad Waleed Kamal</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto">
+A Django developer, AI enthusiast, and data analyst with a strong command of Python. I specialize in building data-driven web applications, automating workflows, and delivering intelligent solutions through modern backend technologies.                </p>
+                <a href="#projects" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-500 transition-colors transform hover:scale-105">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- 
+            ========================
+            ABOUT ME SECTION
+            ========================
+        -->
+        <section id="about" class="container mx-auto px-4 py-24">
+            <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-2xl">
+                <h2 class="text-4xl font-bold text-blue-400 mb-6 text-center">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-full">
+                        <p class="text-lg text-slate-300 mb-6">
+Technology has always fascinated me as a powerful tool for solving real-world problems. Over time, this interest grew into a deep passion for developing efficient, intelligent, and impactful digital solutions. I take pride in turning complex challenges into streamlined applications that serve a clear purpose.
+                        </p>
+                        <p class="text-lg text-slate-300">
+As a dedicated learner, I constantly explore advancements in AI, data analytics, and backend development—always aiming to improve my skills and deliver better results. Outside of coding, I enjoy diving into emerging tech trends and building side projects that keep my creativity sharp.
+                        </p> 
+                        <div class="mt-8">
+                            <h3 class="text-2xl font-bold text-slate-200 mb-4">Skills</h3>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Python</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Django</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">SQL</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Tableau</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">MongoDB</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Pandas</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Numpy</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Matplotlib/Seaborn</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Streamlit</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Tkinter/CustomTkinter</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Data Analyst</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Machine Learning</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Web Scraping</span>
+                                </div>
+                                <div class="bg-slate-700 p-4 rounded-lg flex flex-col items-center shadow-md">
+                                    <span class="text-sm font-semibold">Automation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            ========================
+            QUALIFICATIONS SECTION
+        ========================
+        -->
+
+        <section id="qualification" class="container mx-auto px-4 py-24">
+            <h2 class="text-4xl font-bold text-blue-600 mb-12 text-center">Qualifications & Certifications</h2>
+            <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-2xl">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Qualification Card 1 -->
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-2">Intermediate</h3>
+                        <p class="text-slate-400 mb-4">General Science</p>
+                        <p class="text-slate-400 mb-3">Government Superior Science College | 2021 - 2023</p>
+                    </div>
+                    <!-- Qualification Card 2 -->
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-2">Bachelor of Science</h3>
+                        <p class="text-slate-400 mb-4">Artificial Intelligence</p>
+                        <p class="text-slate-400 mb-3">Dawood University of Engineering & Technology | 2023 - 2027</p>
+                    </div>
+                    <!-- Qualification Card 3 -->
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-2">Certificate</h3>
+                        <p class="text-slate-400 mb-4">CIT with Python</p>
+                        <p class="text-slate-400 mb-3">Bano Qabil 2.0 | 2023 - 2024 (3 Months)</p>
+                    </div>
+                    <!-- Qualification Card 4 -->
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-2">Certificate</h3>
+                        <p class="text-slate-400 mb-4">Advanced Python (with Django)</p>
+                        <p class="text-slate-400 mb-3">Bano Qabil 3.0 | 2024 (3 Months)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--
+            ========================
+            EXPERIENCE SECTION
+            ========================
+        -->
+        <section id="experience" class="container mx-auto px-4 py-24">
+            <h2 class="text-4xl font-bold text-blue-600 mb-12 text-center">Work Experience</h2>
+            <div class="bg-slate-800 p-8 md:p-12 rounded-xl shadow-2xl timeline">
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold">Python Developer</h3>
+                        <p class="text-slate-300">Talento Academy</p>
+                        <p class="text-slate-400 text-sm">May 2025 - Present</p>
+                    </div>
+                    <ul class="list-disc list-inside space-y-2 text-slate-200">
+                        <li>Developed and maintained web applications using Python and Django, delivering robust backend solutions for internal operations at Talento Academy.</li>
+
+<li>Built a custom desktop application to streamline workflow automation and enhance productivity across departments.</li>
+
+<li>Implemented data scraping pipelines and integrated Google Sheets automation using the Sheety API to manage and update data dynamically.</li>
+
+<li>Led automation tasks to eliminate manual processes, ensuring efficiency and consistency across recurring operations.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 
+            ========================
+            PROJECTS SECTION
+            ========================
+        -->
+        <section id="projects" class="container mx-auto px-4 py-24">
+            <h2 class="text-4xl font-bold text-blue-400 mb-12 text-center">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-slate-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="csrm.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Car Registration Form</h3>
+                        <p class="text-slate-400 mb-4">You can register your favourite car and send your download file to us for further process.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Streamlit</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">SQLite3</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://your-car-and-our-responsibility.streamlit.app/" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            </a>
+                            <a href="#" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                GitHub
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22s-4-4-5-5c-1-1-1-4-1-4"/><path d="M14 17a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1zm-2 2a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1z"/><path d="M22 12A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 10 10c.01 0 .02 0 .03 0a10 10 0 0 0 9.97-10z"/><path d="M12 2a10 10 0 0 0-3 1.5M12 2a10 10 0 0 0 3 1.5"/><path d="M12 22a10 10 0 0 1 3-1.5m-3 1.5a10 10 0 0 1-3-1.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-slate-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="IMS.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Inventory Management System</h3>
+                        <p class="text-slate-400 mb-4">An Inventory Management System created for manage items in store. The project is in JSON format.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Django</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">SQLite</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">JSON</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/Waleed8001/Inventory-Management-System" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                GitHub
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22s-4-4-5-5c-1-1-1-4-1-4"/><path d="M14 17a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1zm-2 2a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1z"/><path d="M22 12A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 10 10c.01 0 .02 0 .03 0a10 10 0 0 0 9.97-10z"/><path d="M12 2a10 10 0 0 0-3 1.5M12 2a10 10 0 0 0 3 1.5"/><path d="M12 22a10 10 0 0 1 3-1.5m-3 1.5a10 10 0 0 1-3-1.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-slate-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="WSMA.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Whatsapp Message Sending App</h3>
+                        <p class="text-slate-400 mb-4"> We can send message automatically in Whatsapp to everyone with the gap of some time interval.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Streamlit</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Pywhatkit</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/posts/muhammad-waleed-kamal-3910422b3_talentoacademy-activity-7345019385339699200-T5fR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtKQ50Bc_HmXoPyqbGutfZ-yO7Lf7DH9fM" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            </a>
+                            <a href="https://github.com/Waleed8001/Talento-Academy-Projects/tree/08c3b683da5cc95dd8ebcfa262383df00134d78b/Programs/1_Automatic_Whatsapp_Message_Sending_App" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                GitHub
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22s-4-4-5-5c-1-1-1-4-1-4"/><path d="M14 17a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1zm-2 2a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1z"/><path d="M22 12A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 10 10c.01 0 .02 0 .03 0a10 10 0 0 0 9.97-10z"/><path d="M12 2a10 10 0 0 0-3 1.5M12 2a10 10 0 0 0 3 1.5"/><path d="M12 22a10 10 0 0 1 3-1.5m-3 1.5a10 10 0 0 1-3-1.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="DS.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Data Scraper</h3>
+                        <p class="text-slate-400 mb-4">This project is created for scrape data of different NGO's and Organizations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">BeautifulSoup</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Pandas</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">CSV</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/posts/muhammad-waleed-kamal-3910422b3_talentoacademy-activity-7346137052666548224-i9lr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtKQ50Bc_HmXoPyqbGutfZ-yO7Lf7DH9fM" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            </a>
+                            <a href="https://github.com/Waleed8001/Talento-Academy-Projects/tree/08c3b683da5cc95dd8ebcfa262383df00134d78b/Programs/2_Data_Scraper" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                GitHub
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22s-4-4-5-5c-1-1-1-4-1-4"/><path d="M14 17a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1zm-2 2a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1z"/><path d="M22 12A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 10 10c.01 0 .02 0 .03 0a10 10 0 0 0 9.97-10z"/><path d="M12 2a10 10 0 0 0-3 1.5M12 2a10 10 0 0 0 3 1.5"/><path d="M12 22a10 10 0 0 1 3-1.5m-3 1.5a10 10 0 0 1-3-1.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="SSTA.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">ScreenShot Taker App</h3>
+                        <p class="text-slate-400 mb-4">This app is used to take screen shots and store in your provided directory after some provided time interval.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Tkinter</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Pyautogui</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/posts/muhammad-waleed-kamal-3910422b3_talentoacademy-python-tkinter-activity-7347967646379696128-EDAm?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtKQ50Bc_HmXoPyqbGutfZ-yO7Lf7DH9fM" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            </a>
+                            <a href="https://github.com/Waleed8001/Talento-Academy-Projects/tree/08c3b683da5cc95dd8ebcfa262383df00134d78b/Programs/3_ScreenShot_Taker" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                GitHub
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22s-4-4-5-5c-1-1-1-4-1-4"/><path d="M14 17a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1zm-2 2a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1z"/><path d="M22 12A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 10 10c.01 0 .02 0 .03 0a10 10 0 0 0 9.97-10z"/><path d="M12 2a10 10 0 0 0-3 1.5M12 2a10 10 0 0 0 3 1.5"/><path d="M12 22a10 10 0 0 1 3-1.5m-3 1.5a10 10 0 0 1-3-1.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="GSSD.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Integration of Google Sheets with Sheety API</h3>
+                        <p class="text-slate-400 mb-4">Merge Students cleaned data from 3 diffrent Google Sheets with the use of Sheety API.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Requests</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Sheety API</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Pandas</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/posts/muhammad-waleed-kamal-3910422b3_python-googlesheets-sheety-activity-7351573173542297600-I30p?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtKQ50Bc_HmXoPyqbGutfZ-yO7Lf7DH9fM" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            </a>
+                            <a href="https://github.com/Waleed8001/Talento-Academy-Projects/tree/08c3b683da5cc95dd8ebcfa262383df00134d78b/Programs/4_Students_Google_Sheets" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                GitHub
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22s-4-4-5-5c-1-1-1-4-1-4"/><path d="M14 17a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1zm-2 2a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1z"/><path d="M22 12A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 10 10c.01 0 .02 0 .03 0a10 10 0 0 0 9.97-10z"/><path d="M12 2a10 10 0 0 0-3 1.5M12 2a10 10 0 0 0 3 1.5"/><path d="M12 22a10 10 0 0 1 3-1.5m-3 1.5a10 10 0 0 1-3-1.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                    <img src="Cal.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Calculator App</h3>
+                        <p class="text-slate-400 mb-4">The basic Calculator app with basic functionalities.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Python</span>
+                            <span class="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">Tkinter/CustomTkinter</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/posts/muhammad-waleed-kamal-3910422b3_assalam-u-alaikum-everyone-excited-to-share-activity-7346899200531402752-EORc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEtKQ50Bc_HmXoPyqbGutfZ-yO7Lf7DH9fM" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                            </a>
+                            <a href="https://github.com/Waleed8001/Tkinter-Projects/tree/f5c4b5d963999de6782264d61656412a120fde1a/Calculator-Programs" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 transition-colors">
+                                GitHub
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22s-4-4-5-5c-1-1-1-4-1-4"/><path d="M14 17a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1zm-2 2a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1z"/><path d="M22 12A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 10 10c.01 0 .02 0 .03 0a10 10 0 0 0 9.97-10z"/><path d="M12 2a10 10 0 0 0-3 1.5M12 2a10 10 0 0 0 3 1.5"/><path d="M12 22a10 10 0 0 1 3-1.5m-3 1.5a10 10 0 0 1-3-1.5"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+            ========================
+            CONTACT SECTION
+            ========================
+        -->
+        <section id="contact" class="container mx-auto px-4 py-24">
+            <h2 class="text-4xl font-bold text-blue-400 mb-12 text-center">Get In Touch</h2>
+            <div class="max-w-xl mx-auto bg-slate-800 p-8 md:p-12 rounded-xl shadow-2xl">
+                <p class="text-lg text-slate-300 mb-6 text-center">I look forward to hearing from you!</p>
+                <div class="flex flex-col items-center space-y-4">
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/Waleed8001" target="_blank" class="flex items-center space-x-2 text-slate-400 hover:text-blue-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22s-4-4-5-5c-1-1-1-4-1-4"/><path d="M14 17a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1zm-2 2a1 1 0 0 0-1 1c0 1 1 1 1 1s1 0 1-1c0-1-1-1-1-1z"/><path d="M22 12A10 10 0 0 0 12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 10 10c.01 0 .02 0 .03 0a10 10 0 0 0 9.97-10z"/><path d="M12 2a10 10 0 0 0-3 1.5M12 2a10 10 0 0 0 3 1.5"/><path d="M12 22a10 10 0 0 1 3-1.5m-3 1.5a10 10 0 0 1-3-1.5"/></svg>
+                        <p class="text-sm md:text-base">GitHub</p>
+                    </a>
+                    <!-- LinkedIn Link -->
+                    <a href="https://www.linkedin.com/in/muhammad-waleed-kamal-3910422b3/" target="_blank" class="flex items-center space-x-2 text-slate-400 hover:text-blue-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        <p class="text-sm md:text-base">LinkedIn</p>
+                    </a>
+                    <!-- Email Link -->
+                    <a href="mailto:waleedkamal801@gmail.com" class="flex items-center space-x-2 text-slate-400 hover:text-blue-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <p class="text-sm md:text-base">waleedkamal801@gmail.com</p>
+                    </a>
+                    <!-- Phone Link -->
+                    <a href="tel:+1-800-555-0199" class="flex items-center space-x-2 text-slate-400 hover:text-blue-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <p class="text-sm md:text-base">+92 3242923319</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- 
+        ========================
+        FOOTER
+        ========================
+    -->
+    <footer class="bg-slate-950 py-8 text-center text-slate-400">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2024 Muhammad Waleed Kamal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" id="back-to-top" class="hover:text-blue-300 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up"><path d="m12 19-7-7 7-7"/><path d="m12 19-7-7 7-7"/><path d="M12 19V5"/></svg>
+    </a>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // DOM elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        const backToTopButton = document.getElementById('back-to-top');
+
+        // Toggle mobile menu visibility
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Handle contact form submission
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission behavior
+            
+            // This is where you would typically send form data to a backend server.
+            // For this static site, we'll just display a success message.
+            
+            // Show a success message
+            formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+            formMessage.classList.remove('hidden');
+            formMessage.classList.add('bg-green-500', 'text-white');
+            
+            // Clear the form fields after a delay
+            setTimeout(() => {
+                contactForm.reset();
+                formMessage.classList.add('hidden');
+                formMessage.classList.remove('bg-green-500', 'text-white');
+            }, 5000);
+        });
+
+        // Show/hide the back-to-top button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        // Initialize Lucide icons on the page
+        lucide.createIcons();
+    </script>
+</body>
+</html>
